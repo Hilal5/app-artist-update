@@ -51,7 +51,7 @@ Project ini dikembangkan menggunakan metodologi Research & Development dengan pe
 ### 10. contact
 ![contact](img-ss/9.png)
 
-### 10. about full interface
+### 11. about full interface
 ![about interface](img-ss/10.png)
 
 
