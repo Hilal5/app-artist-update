@@ -569,14 +569,18 @@ private function generateCommissionAutoReply($commission)
     $message .= "• Order ID: #" . time() . "\n";
     $message .= "• Status: Waiting for payment\n\n";
     
-    $message .= "✨ **FREE REVISION POLICY:**\n";
+    $message .= "✨ **FREE REVISION:**\n";
     $message .= "• First 5 revisions: **FREE**\n";
     $message .= "• Additional revisions: **+Rp 5,000** per revision\n\n";
     
-    $message .= "💳 **NEXT STEPS:**\n";
-    $message .= "1. Send payment proof here\n";
-    $message .= "2. Provide detailed requirements/references\n";
-    $message .= "3. Wait for confirmation\n\n";
+    $message .= "💳 **STEPS commission:**\n";
+    $message .= "1. Wait for admin's reply\n";
+    $message .= "2. Send proof of payment of 20% down payment\n";
+    $message .= "3. Provide detailed requirements/references\n";
+    $message .= "4. After the sketch is completed and the 50% down payment is approved, please send proof of payment\n";
+    $message .= "5. Free 5x revisions, more than that will be charged an additional fee of Rp5.000\n";
+    $message .= "5. Finally, if everything has been approved, please pay the final down payment of 30%\n";
+    $message .= "6. Thank you.\n\n";
     
     $message .= "Need help? Just reply to this message! 😊";
     
