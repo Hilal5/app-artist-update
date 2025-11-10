@@ -22,29 +22,35 @@ Project ini dikembangkan menggunakan metodologi Research & Development dengan pe
 ## 📸 Screenshot Aplikasi
 
 ### 1. Halaman Utama - Dashboard
-![Dashboard](ss/1.png)
-*Tampilan dashboard utama aplikasi perpustakaan*
+![Dashboard](img-ss/1.png)
 
-### 2. Halaman Utama - Daftar Buku
-![Daftar Buku](ss/2.png)
-*Daftar lengkap semua buku dengan fitur pencarian*
-*Tampilan card buku dengan aksi baca, edit, hapus*
+### 2. About
+![interface about](img-ss/2.png)
 
-### 3. Halaman Utama - pagination
-![Tabel Buku](ss/3.png)
-*Tampilan pagination melihat data buku lainnya*
+### 3. Found artist link
+![interfcae link artist](img-ss/3.png)
 
-### 4. Detail Buku
-![Detail Buku](ss/4.png)
-*Halaman detail informasi lengkap sebuah buku*
+### 4. work project
+![portifolio work project](img-ss/4.png)
 
-### 5. Edit Buku
-![Edit Buku](ss/5.png)
-*Form untuk mengedit informasi buku yang sudah ada*
+### 5. Commsisions
+![interface commsissions](img-ss/5.png)
 
-### 6. Tambah Buku
-![Tambah Buku](ss/6.png)
-*Form untuk menambahkan buku baru ke dalam sistem*
+### 6. Ratting adn review
+![interface review](img-ss/6.png)
+
+### 7. Admin manage review
+![interface manage review](img-ss/7.png)
+
+### 8. Chat fitur realtime
+![realtime chat](img-ss/8.png)
+
+### 9. faq
+![interface faq](img-ss/9.png)
+
+### 10. contact
+![realtime chat](img-ss/10.png)
+
 
 ## ✨ Fitur Utama
 
