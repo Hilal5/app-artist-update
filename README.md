@@ -46,26 +46,22 @@ Project ini dikembangkan menggunakan metodologi Research & Development dengan pe
 
 ## 🛠️ Teknologi yang Digunakan
 
-- **Backend Framework:** Laravel 10.x
-- **Frontend:** Blade Templates, TailwindCSS, JavaScript
+- **Backend Framework:** Laravel 12.x
+- **Frontend:** Blade Templates, CSS, JavaScript
 - **Database:** MySQL
-- **Authentication:** Laravel Breeze/Sanctum
+- **Authentication:** Laravel
 - **File Storage:** Laravel Storage
-- **Real-time Features:** Laravel Echo, Pusher (optional)
-- **Animation Libraries:** AOS (Animate On Scroll), GSAP
-- **Additional Libraries:** 
-  - SweetAlert2 untuk notifikasi
-  - Select2 untuk dropdown interaktif
-  - Chart.js untuk visualisasi data
+- **Real-time Features:** Laravel Echo
+- **Animation css**
 
 ---
 
 ## 📦 Instalasi
 
 ### Prasyarat
-- PHP >= 8.1
+- PHP >= 8.4
 - Composer
-- MySQL >= 5.7
+- MySQL >= 8.4
 - Node.js & NPM
 - Git
 
@@ -201,7 +197,6 @@ portfolio-artist-laravel/
 │   └── js/                   # Source JavaScript
 ├── routes/
 │   ├── web.php               # Web routes
-│   └── api.php               # API routes
 └── storage/
     └── app/
         └── public/           # Public storage
@@ -211,14 +206,12 @@ portfolio-artist-laravel/
 
 ## 🎯 Roadmap & Future Development
 
-- [ ] Implementasi sistem pembayaran gateway (Midtrans, Xendit)
-- [ ] Notifikasi real-time menggunakan WebSocket
+- [ ] Implementasi sistem pembayaran still manual 
+- [ ] Notifikasi real-time
 - [ ] Mobile responsive optimization
-- [ ] API untuk mobile app
-- [ ] Multi-language support
-- [ ] Advanced search & filtering
+- [ ] mobile app
 - [ ] Social media integration
-- [ ] Portfolio analytics dashboard
+- [ ] Portfolio dashboard
 
 ---
 
@@ -246,21 +239,12 @@ Dikembangkan oleh **Hilal** sebagai bagian dari penelitian tugas akhir.
 
 ---
 
-## 📧 Kontak & Support
-
-Jika ada pertanyaan atau masalah:
-- **Email:** [email-anda]
-- **GitHub Issues:** [link-ke-issues]
-- **LinkedIn:** [link-linkedin]
-
----
-
 ## 🙏 Acknowledgments
 
 - Laravel Framework
-- TailwindCSS
+- CSS
+- Javascript
 - Komunitas digital artist Indonesia
-- Dosen pembimbing dan reviewer
 
 ---
 
