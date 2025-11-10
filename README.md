@@ -19,6 +19,33 @@ Project ini dikembangkan menggunakan metodologi Research & Development dengan pe
 
 ---
 
+## 📸 Screenshot Aplikasi
+
+### 1. Halaman Utama - Dashboard
+![Dashboard](ss/1.png)
+*Tampilan dashboard utama aplikasi perpustakaan*
+
+### 2. Halaman Utama - Daftar Buku
+![Daftar Buku](ss/2.png)
+*Daftar lengkap semua buku dengan fitur pencarian*
+*Tampilan card buku dengan aksi baca, edit, hapus*
+
+### 3. Halaman Utama - pagination
+![Tabel Buku](ss/3.png)
+*Tampilan pagination melihat data buku lainnya*
+
+### 4. Detail Buku
+![Detail Buku](ss/4.png)
+*Halaman detail informasi lengkap sebuah buku*
+
+### 5. Edit Buku
+![Edit Buku](ss/5.png)
+*Form untuk mengedit informasi buku yang sudah ada*
+
+### 6. Tambah Buku
+![Tambah Buku](ss/6.png)
+*Form untuk menambahkan buku baru ke dalam sistem*
+
 ## ✨ Fitur Utama
 
 ### Untuk Artist
