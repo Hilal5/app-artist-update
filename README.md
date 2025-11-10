@@ -1,61 +1,270 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Portfolio Website untuk Digital Artist
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">
+  <h3>Platform Portfolio Open-Source untuk Digital Artist & Freelancer</h3>
+  <p>Website portfolio interaktif yang dibangun dengan Laravel framework untuk membantu digital artist menampilkan karya dan mengelola komisi</p>
+</div>
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📋 Tentang Project
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Platform portfolio web ini dikembangkan sebagai solusi open-source untuk membantu digital artist dan freelancer dalam:
+- Menampilkan portfolio karya digital mereka
+- Mengelola sistem komisi dan pesanan
+- Berinteraksi dengan klien melalui sistem chat terintegrasi
+- Membangun reputasi melalui sistem review dan rating
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Project ini dikembangkan menggunakan metodologi Research & Development dengan pendekatan ADDIE (Analysis, Design, Development, Implementation, Evaluation).
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ✨ Fitur Utama
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Untuk Artist
+- 🎨 **Portfolio Management** - Upload dan kelola karya digital dengan galeri interaktif
+- 💼 **Sistem Komisi** - Terima dan kelola pesanan komisi dari klien
+- 💬 **Live Chat** - Komunikasi real-time dengan klien
+- ⭐ **Review & Rating** - Sistem review untuk membangun kredibilitas
+- 👤 **Profile Kustomisasi** - Personalisasi halaman profile artist
+- 📊 **Dashboard Analytics** - Pantau performa dan statistik portfolio
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Untuk Klien/Pengunjung
+- 🔍 **Browse Artists** - Temukan artist berdasarkan style dan spesialisasi
+- 📝 **Request Komisi** - Buat permintaan komisi dengan detail lengkap
+- 💳 **Sistem Pembayaran** - Proses transaksi yang aman
+- ⭐ **Leave Reviews** - Berikan rating dan review untuk artist
+- 🔔 **Notifikasi** - Update real-time untuk status komisi
 
-## Laravel Sponsors
+### Untuk Admin
+- 👥 **User Management** - Kelola user, artist, dan konten
+- 📊 **Dashboard Admin** - Monitoring aktivitas platform
+- 🚫 **Moderasi Konten** - Review dan moderasi karya yang diupload
+- 📈 **Reports & Analytics** - Laporan lengkap aktivitas platform
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🛠️ Teknologi yang Digunakan
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- **Backend Framework:** Laravel 10.x
+- **Frontend:** Blade Templates, TailwindCSS, JavaScript
+- **Database:** MySQL
+- **Authentication:** Laravel Breeze/Sanctum
+- **File Storage:** Laravel Storage
+- **Real-time Features:** Laravel Echo, Pusher (optional)
+- **Animation Libraries:** AOS (Animate On Scroll), GSAP
+- **Additional Libraries:** 
+  - SweetAlert2 untuk notifikasi
+  - Select2 untuk dropdown interaktif
+  - Chart.js untuk visualisasi data
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 📦 Instalasi
 
-## Code of Conduct
+### Prasyarat
+- PHP >= 8.1
+- Composer
+- MySQL >= 5.7
+- Node.js & NPM
+- Git
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Langkah Instalasi
 
-## Security Vulnerabilities
+1. **Clone Repository**
+```bash
+git clone https://github.com/username/portfolio-artist-laravel.git
+cd portfolio-artist-laravel
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2. **Install Dependencies**
+```bash
+# Install PHP dependencies
+composer install
 
-## License
+# Install JavaScript dependencies
+npm install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. **Setup Environment**
+```bash
+# Copy file environment
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+```
+
+4. **Konfigurasi Database**
+
+Edit file `.env` dan sesuaikan dengan konfigurasi database Anda:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_database
+DB_USERNAME=username_database
+DB_PASSWORD=password_database
+```
+
+5. **Migrasi Database**
+```bash
+# Jalankan migrasi
+php artisan migrate
+
+# (Optional) Jalankan seeder untuk data dummy
+php artisan db:seed
+```
+
+6. **Setup Storage**
+```bash
+# Create symbolic link untuk storage
+php artisan storage:link
+```
+
+7. **Compile Assets**
+```bash
+# Development
+npm run dev
+
+# Production
+npm run build
+```
+
+8. **Jalankan Aplikasi**
+```bash
+# Start development server
+php artisan serve
+```
+
+Aplikasi dapat diakses di `http://localhost:8000`
+
+---
+
+## 🚀 Deployment
+
+### Persiapan Production
+
+1. **Set Environment ke Production**
+```env
+APP_ENV=production
+APP_DEBUG=false
+```
+
+2. **Optimize Application**
+```bash
+# Cache konfigurasi
+php artisan config:cache
+
+# Cache routes
+php artisan route:cache
+
+# Cache views
+php artisan view:cache
+
+# Optimize autoloader
+composer install --optimize-autoloader --no-dev
+```
+
+3. **Compile Assets untuk Production**
+```bash
+npm run build
+```
+
+### Hosting Options
+- VPS (Hostinger, DigitalOcean, dll)
+- Shared Hosting dengan PHP support
+- Platform-as-a-Service (Railway, Heroku, dll)
+
+---
+
+## 📁 Struktur Project
+
+```
+portfolio-artist-laravel/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/      # Controllers
+│   │   └── Middleware/       # Custom middleware
+│   ├── Models/               # Eloquent models
+│   └── Services/             # Business logic
+├── database/
+│   ├── migrations/           # Database migrations
+│   └── seeders/              # Database seeders
+├── public/
+│   ├── css/                  # Compiled CSS
+│   ├── js/                   # Compiled JavaScript
+│   └── uploads/              # User uploads
+├── resources/
+│   ├── views/                # Blade templates
+│   ├── css/                  # Source CSS
+│   └── js/                   # Source JavaScript
+├── routes/
+│   ├── web.php               # Web routes
+│   └── api.php               # API routes
+└── storage/
+    └── app/
+        └── public/           # Public storage
+```
+
+---
+
+## 🎯 Roadmap & Future Development
+
+- [ ] Implementasi sistem pembayaran gateway (Midtrans, Xendit)
+- [ ] Notifikasi real-time menggunakan WebSocket
+- [ ] Mobile responsive optimization
+- [ ] API untuk mobile app
+- [ ] Multi-language support
+- [ ] Advanced search & filtering
+- [ ] Social media integration
+- [ ] Portfolio analytics dashboard
+
+---
+
+## 🤝 Kontribusi
+
+Kontribusi sangat diterima! Berikut cara berkontribusi:
+
+1. Fork repository ini
+2. Buat branch fitur baru (`git checkout -b feature/AmazingFeature`)
+3. Commit perubahan (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buat Pull Request
+
+---
+
+## 📝 Lisensi
+
+Project ini dikembangkan untuk keperluan penelitian tugas akhir dan bersifat open-source. Anda bebas menggunakan, memodifikasi, dan mendistribusikan dengan tetap mencantumkan kredit kepada pengembang asli.
+
+---
+
+## 👨‍💻 Pengembang
+
+Dikembangkan oleh **Hilal** sebagai bagian dari penelitian tugas akhir.
+
+---
+
+## 📧 Kontak & Support
+
+Jika ada pertanyaan atau masalah:
+- **Email:** [email-anda]
+- **GitHub Issues:** [link-ke-issues]
+- **LinkedIn:** [link-linkedin]
+
+---
+
+## 🙏 Acknowledgments
+
+- Laravel Framework
+- TailwindCSS
+- Komunitas digital artist Indonesia
+- Dosen pembimbing dan reviewer
+
+---
+
+<div align="center">
+  <p>Dibuat dengan ❤️ untuk komunitas digital artist</p>
+  <p>⭐ Star project ini jika bermanfaat!</p>
+</div>
