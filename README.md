@@ -31,25 +31,28 @@ Project ini dikembangkan menggunakan metodologi Research & Development dengan pe
 ![interfcae link artist](img-ss/3.png)
 
 ### 4. work project
-![portifolio work project](img-ss/4.png)
+![portifolio work project](img-ss/11.png)
 
 ### 5. Commsisions
-![interface commsissions](img-ss/5.png)
+![portifolio work project](img-ss/4.png)
 
 ### 6. Ratting adn review
-![interface review](img-ss/6.png)
+![interface commsissions](img-ss/5.png)
 
 ### 7. Admin manage review
-![interface manage review](img-ss/7.png)
+![interface review](img-ss/6.png)
 
 ### 8. Chat fitur realtime
-![realtime chat](img-ss/8.png)
+![interface manage review](img-ss/7.png)
 
 ### 9. faq
-![interface faq](img-ss/9.png)
+![faq interfacet](img-ss/8.png)
 
 ### 10. contact
-![realtime chat](img-ss/10.png)
+![contact](img-ss/9.png)
+
+### 10. about full interface
+![about interface](img-ss/10.png)
 
 
 ## ✨ Fitur Utama
