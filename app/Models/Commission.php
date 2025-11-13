@@ -18,6 +18,7 @@ class Commission extends Model // ← CLASS NAME SINGULAR
         'name',
         'description',
         'price',
+        'discount_percentage',
         'delivery_time',
         'slots_available',
         'images',
