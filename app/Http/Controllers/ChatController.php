@@ -167,15 +167,26 @@ class ChatController extends Controller
             'created_at_full' => $message->created_at->format('Y-m-d H:i:s'),
         ];
 
-        if ($message->commission) {
-            $data['commission'] = [
-                'id' => $message->commission->id,
-                'name' => $message->commission->name,
-                'description' => $message->commission->description,
-                'price' => $message->commission->price,
-                'delivery_time' => $message->commission->delivery_time,
-            ];
-        }
+if ($message->commission) {
+    $commission = $message->commission;
+    $originalPrice = $commission->price;
+    $discountedPrice = $originalPrice;
+    
+    // Hitung harga diskon jika ada
+    if ($commission->discount_percentage > 0) {
+        $discountedPrice = $originalPrice - ($originalPrice * $commission->discount_percentage / 100);
+    }
+    
+    $data['commission'] = [  // ✅ BENAR - pakai $data bukan $responseData
+        'id' => $commission->id,
+        'name' => $commission->name,
+        'description' => $commission->description,
+        'price' => $originalPrice,
+        'discount_percentage' => $commission->discount_percentage,
+        'discounted_price' => $discountedPrice,
+        'delivery_time' => $commission->delivery_time,
+    ];
+}
 
         return $data;
     });
@@ -355,15 +366,25 @@ public function sendMessage(Request $request)
             'created_at_full' => $message->created_at->format('Y-m-d H:i:s'),
         ];
 
-        if ($message->commission) {
-            $responseData['commission'] = [
-                'id' => $message->commission->id,
-                'name' => $message->commission->name,
-                'description' => $message->commission->description,
-                'price' => $message->commission->price,
-                'delivery_time' => $message->commission->delivery_time,
-            ];
-        }
+if ($message->commission) {
+    $commission = $message->commission;
+    $originalPrice = $commission->price;
+    $discountedPrice = $originalPrice;
+    
+    if ($commission->discount_percentage > 0) {
+        $discountedPrice = $originalPrice - ($originalPrice * $commission->discount_percentage / 100);
+    }
+    
+    $responseData['commission'] = [  // ✅ BENAR - pakai $responseData
+        'id' => $commission->id,
+        'name' => $commission->name,
+        'description' => $commission->description,
+        'price' => $originalPrice,
+        'discount_percentage' => $commission->discount_percentage,
+        'discounted_price' => $discountedPrice,
+        'delivery_time' => $commission->delivery_time,
+    ];
+}
 
         return response()->json([
             'success' => true,
@@ -559,13 +580,23 @@ public function deleteConversation(Request $request)
  */
 private function generateCommissionAutoReply($commission)
 {
-    $message = "🎉 **Thank you for ordering!**\n\n";
+    $originalPrice = $commission->price;
+    $discountedPrice = $originalPrice;
+    $discountText = "";
+    
+    if ($commission->discount_percentage > 0) {
+        $discountedPrice = $originalPrice - ($originalPrice * $commission->discount_percentage / 100);
+        $discountText = "\n~~IDR " . number_format($originalPrice, 0, ',', '.') . "~~ **-{$commission->discount_percentage}%**";
+    }
+    
+    $message = "🎉 **Thank you for ordering!**\n";
+    $message .= "🎉 **this automatic message**\n\n";
     $message .= "Your commission has been confirmed:\n";
     $message .= "📦 **{$commission->name}**\n";
-    $message .= "💰 **IDR " . number_format($commission->price, 0, ',', '.') . "**\n\n";
+    $message .= "💰 **IDR " . number_format($discountedPrice, 0, ',', '.') . "**{$discountText}\n\n";
     
     $message .= "📋 **TRANSACTION DETAILS:**\n";
-    $message .= "• Estimated delivery: {$commission->delivery_time} Day\n";
+    $message .= "• Estimated delivery: {$commission->delivery_time}\n";
     $message .= "• Order ID: #" . time() . "\n";
     $message .= "• Status: Waiting for payment\n\n";
     
@@ -573,7 +604,7 @@ private function generateCommissionAutoReply($commission)
     $message .= "• First 5 revisions: **FREE**\n";
     $message .= "• Additional revisions: **+Rp 5,000** per revision\n\n";
     
-    $message .= "💳 **STEPS commission:**\n";
+    $message .= "💳 **STEPS COMMISSION:**\n";
     $message .= "1. Wait for admin's reply\n";
     $message .= "2. Send proof of payment of 20% down payment\n";
     $message .= "3. Provide detailed requirements/references\n";
