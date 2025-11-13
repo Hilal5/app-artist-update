@@ -266,6 +266,33 @@
         </div>
     </div>
 
+    <!-- ✅ TAMBAH FIELD DISCOUNT DI SINI -->
+    <div class="form-group">
+        <label for="commissionDiscount">
+            Discount <span style="color: rgba(255,255,255,0.6); font-weight: normal;">(Optional)</span>
+        </label>
+        <div class="input-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+                <circle cx="9" cy="9" r="2" fill="white"/>
+                <circle cx="15" cy="15" r="2" fill="white"/>
+                <line x1="15" y1="9" x2="9" y2="15" stroke="white" stroke-width="2"/>
+            </svg>
+            <input 
+                type="number" 
+                id="commissionDiscount" 
+                name="discount_percentage" 
+                placeholder="0" 
+                min="0" 
+                max="100"
+                value="0"
+            >
+            <span style="position: absolute; right: 45px; color: rgba(255,255,255,0.6); font-size: 18px; pointer-events: none;">%</span>
+        </div>
+        <small style="color: rgba(255,255,255,0.5); font-size: 11px; margin-top: 4px; display: block;">
+            💡 Set 0 for no discount, max 100%
+        </small>
+    </div>
+
     <!-- Slots Available -->
     <div class="form-group">
         <label for="slotsAvailable">
