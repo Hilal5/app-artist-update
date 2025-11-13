@@ -5178,11 +5178,7 @@ function displayWorks(works) {
     if (works.length === 0) {
         worksGrid.innerHTML = `
             <div class="empty-works">
-                <svg viewBox="0 0 24 24" width="60" height="60">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="white" stroke-width="2" fill="none"/>
-                    <circle cx="8.5" cy="8.5" r="1.5" fill="yellow"/>
-                    <polyline points="21 15 16 10 5 21" stroke="white" stroke-width="2" fill="none"/>
-                </svg>
+                <img src="/images/empty-portfolio.png" alt="No works" style="width: 150px; height: 150px; margin-bottom: 20px; opacity: 0.7;">
                 <h3>No works yet</h3>
                 <p>Start adding your amazing artwork!</p>
             </div>
@@ -5340,25 +5336,52 @@ function updateWorksStats(stats) {
 
 // Filter works
 function filterWorks(category, event) {
-    const filterBtns = document.querySelectorAll('.portfolio-filter .filter-btn');
-    const workItems = document.querySelectorAll('.work-item');
+    const filterBtns = document.querySelectorAll(
+        ".portfolio-filter .filter-btn"
+    );
+    const workItems = document.querySelectorAll(".work-item");
+    const worksGrid = document.getElementById("worksGrid");
 
     // Update active button
-    filterBtns.forEach(btn => btn.classList.remove('active'));
+    filterBtns.forEach((btn) => btn.classList.remove("active"));
     if (event && event.target) {
-        event.target.classList.add('active');
+        event.target.classList.add("active");
+    }
+
+    // ✅ Hapus empty state dulu kalau ada
+    const emptyState = worksGrid.querySelector(".empty-works");
+    if (emptyState) {
+        emptyState.remove();
     }
 
     // Filter works
-    workItems.forEach(item => {
+    let visibleCount = 0;
+    workItems.forEach((item) => {
         const itemCategory = item.dataset.category;
-        if (category === 'all' || itemCategory === category) {
-            item.classList.remove('hidden');
+        if (category === "all" || itemCategory === category) {
+            item.classList.remove("hidden");
+            visibleCount++;
         } else {
-            item.classList.add('hidden');
+            item.classList.add("hidden");
         }
     });
+
+    // ✅ SHOW EMPTY STATE kalau gak ada yang visible
+    if (visibleCount === 0) {
+        const categoryName =
+            event && event.target ? event.target.textContent : category;
+
+        const emptyDiv = document.createElement("div");
+        emptyDiv.className = "empty-works";
+        emptyDiv.innerHTML = `
+            <img src="/images/empty-category.png" alt="No works" style="width: 120px; height: 120px; margin-bottom: 20px; opacity: 0.6;">
+            <h3>No ${categoryName} Yet</h3>
+            <p>This category is empty. Check back later for amazing artworks!</p>
+        `;
+        worksGrid.appendChild(emptyDiv);
+    }
 }
+
 
 // Open work form
 // PERBAIKAN: Function openWorkForm yang lebih robust
