@@ -5178,7 +5178,7 @@ function displayWorks(works) {
     if (works.length === 0) {
         worksGrid.innerHTML = `
             <div class="empty-works">
-                <img src="/images/empty-portfolio.png" alt="No works" style="width: 150px; height: 150px; margin-bottom: 20px; opacity: 0.7;">
+                <img src="/images/empty-portfolio.png" alt="No works" style="width: 200px; height: 200px; opacity: 0.7;">
                 <h3>No works yet</h3>
                 <p>Start adding your amazing artwork!</p>
             </div>
@@ -5374,7 +5374,7 @@ function filterWorks(category, event) {
         const emptyDiv = document.createElement("div");
         emptyDiv.className = "empty-works";
         emptyDiv.innerHTML = `
-            <img src="/images/empty-category.png" alt="No works" style="width: 120px; height: 120px; margin-bottom: 20px; opacity: 0.6;">
+            <img src="/images/empty-portfolio.png" alt="No works" style="width: 200px; height: 200px; opacity: 0.6;">
             <h3>No ${categoryName} Yet</h3>
             <p>This category is empty. Check back later for amazing artworks!</p>
         `;
