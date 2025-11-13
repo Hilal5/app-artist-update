@@ -1988,21 +1988,19 @@ function generateCommissionHTML(commission) {
                 </div>
                 
                 <div class="commission-details">
-                    <div class="detail-item">
-                        <svg viewBox="0 0 24 24" width="18" height="18">
-                            <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" fill="none"/>
-                        </svg>
-                        <span>Starting from <strong>IDR ${formatPrice(
-                            commission.price
-                        )}</strong></span>
-                    </div>
+<div class="detail-item">
+    <svg viewBox="0 0 24 24" width="18" height="18">
+        <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" fill="none"/>
+    </svg>
+    <span>${generatePriceHTML(commission)}</span>
+</div>
                     <div class="detail-item">
                         <svg viewBox="0 0 24 24" width="18" height="18">
                             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
                             <polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="2" fill="none"/>
                         </svg>
-                        <span>${escapeHtml(commission.delivery_time)} Day</span>
+                        <span>${escapeHtml(commission.delivery_time)}</span>
                     </div>
                     <div class="detail-item">
                         <svg viewBox="0 0 24 24" width="18" height="18">
@@ -2065,6 +2063,30 @@ function generateCommissionHTML(commission) {
     `;
 
     return html;
+}
+
+// ✅ NEW: Generate price HTML with discount
+function generatePriceHTML(commission) {
+    if (commission.discount_percentage > 0) {
+        const originalPrice = commission.price;
+        const discountedPrice = originalPrice - (originalPrice * commission.discount_percentage / 100);
+        
+        return `
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="text-decoration: line-through; color: rgba(255,255,255,0.4); font-size: 13px;">
+                        IDR ${formatPrice(originalPrice)}
+                    </span>
+                    <span style="background: #f44336; color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600;">
+                        -${commission.discount_percentage}%
+                    </span>
+                </div>
+                <strong style="color: #4caf50; font-size: 16px;">IDR ${formatPrice(discountedPrice)}</strong>
+            </div>
+        `;
+    } else {
+        return `Starting from <strong>IDR ${formatPrice(commission.price)}</strong>`;
+    }
 }
 
 
@@ -2272,6 +2294,8 @@ async function loadCommissionData(id) {
             document.getElementById("commissionDescription").value =
                 commission.description;
             document.getElementById("commissionPrice").value = commission.price;
+            document.getElementById("commissionDiscount").value =
+                            commission.discount_percentage || 0;
             document.getElementById("deliveryTime").value =
                 commission.delivery_time;
             document.getElementById("slotsAvailable").value =
@@ -3643,30 +3667,54 @@ function renderMessages(messages) {
             const canDelete = isAdmin && !msg.is_own; // Admin bisa delete message user
 
             // Commission card
+            // Commission card
             let commissionCard = "";
             if (msg.commission) {
                 const desc = msg.commission.description || "";
                 const descId = `commDesc-${msg.id}`;
                 const isLongDesc = desc.length > 150;
 
+                // ✅ Generate price HTML dengan diskon
+                let priceHTML = "";
+                if (
+                    msg.commission.discount_percentage &&
+                    msg.commission.discount_percentage > 0
+                ) {
+                    priceHTML = `
+            <div style="margin-top: 8px;">
+                <span style="text-decoration: line-through; color: rgba(255,255,255,0.4); font-size: 13px;">
+                    IDR ${formatPrice(msg.commission.price)}
+                </span>
+                <span style="background: #f44336; color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin-left: 6px; font-weight: 600;">
+                    -${msg.commission.discount_percentage}%
+                </span>
+                <p style="margin-top: 5px;"><strong style="color: #4caf50; font-size: 16px;">💰 IDR ${formatPrice(
+                    msg.commission.discounted_price
+                )}</strong></p>
+            </div>
+        `;
+                } else {
+                    priceHTML = `<p style="margin-top: 8px;"><strong>💰 IDR ${formatPrice(
+                        msg.commission.price
+                    )}</strong></p>`;
+                }
+
                 commissionCard = `
-                <div class="message-commission-card">
-                    <div class="commission-icon-badge">
-                        <svg viewBox="0 0 24 24" width="22" height="22">
-                            <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" fill="white"/>
-                        </svg>
-                    </div>
-                    <div class="commission-card-info">
-                        <h5>📦 ${escapeHtml(msg.commission.name)}</h5>
-                        <p style="margin-top: 8px;"><strong>💰 IDR ${formatPrice(
-                            msg.commission.price
-                        )}</strong></p>
-                        <p style="font-size: 12px; opacity: 0.7; margin-top: 5px;">⏱️ ${
-                            msg.commission.delivery_time
-                        } Days</p>
-                    </div>
-                </div>
-            `;
+        <div class="message-commission-card">
+            <div class="commission-icon-badge">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                    <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" fill="white"/>
+                </svg>
+            </div>
+            <div class="commission-card-info">
+                <h5>📦 ${escapeHtml(msg.commission.name)}</h5>
+                ${priceHTML}
+                <p style="font-size: 12px; opacity: 0.7; margin-top: 5px;">⏱️ ${
+                    msg.commission.delivery_time
+                }</p>
+            </div>
+        </div>
+    `;
             }
 
             // Attachment
@@ -4305,13 +4353,26 @@ async function sendCommissionOrder(commission, paymentMethod) {
         paymentMethod,
     });
 
-    // ✅ Format message dengan payment method
+    // ✅ CALCULATE PRICES
+    const originalPrice = commission.price;
+    const discountPercentage = commission.discount_percentage || 0;
+    let finalPrice = originalPrice;
+    let priceText = `💰 *Price: IDR ${formatPrice(originalPrice)}`;
+
+    if (discountPercentage > 0) {
+        finalPrice = originalPrice - (originalPrice * discountPercentage) / 100;
+        priceText = `💰 *Original Price: IDR ${formatPrice(originalPrice)}
+    💸 *Discount: -${discountPercentage}%
+    ✨ *Final Price: IDR ${formatPrice(finalPrice)}`;
+    }
+
+    // ✅ Format message dengan payment method + discount
     const message = `🎨 **NEW COMMISSION ORDER**
 
     📦 *Service: ${commission.name}
 
-    💰 *Price: IDR ${formatPrice(commission.price)}
-    ⏱️ *Delivery Time: ${commission.delivery_time} Days
+    ${priceText}
+    ⏱️ *Delivery Time: ${commission.delivery_time}
     💳 *Payment Method: ${paymentMethod.method}
     📋 *Payment Details: ${paymentMethod.info}
 
@@ -4319,9 +4380,7 @@ async function sendCommissionOrder(commission, paymentMethod) {
     ${commission.description}
 
     ---
-    I have selected ${
-            paymentMethod.method
-        } for payment. Please confirm this order and I'll send the payment proof after transfer. Thank you! 🙏`;
+    I have selected ${paymentMethod.method} for payment. Please confirm this order and I'll send the payment proof after transfer. Thank you! 🙏`;
 
     try {
         // ✅ 1. Kirim text message dengan commission card & payment info
