@@ -68,15 +68,14 @@ Project ini dikembangkan menggunakan metodologi Research & Development dengan pe
 ### Untuk Klien/Pengunjung
 - 🔍 **Browse Artists** - Temukan artist berdasarkan style dan spesialisasi
 - 📝 **Request Komisi** - Buat permintaan komisi dengan detail lengkap
-- 💳 **Sistem Pembayaran** - Proses transaksi yang aman
+- 💳 **Sistem Pembayaran** - Proses transaksi yang aman dengan proses dp 3 tahap.
 - ⭐ **Leave Reviews** - Berikan rating dan review untuk artist
-- 🔔 **Notifikasi** - Update real-time untuk status komisi
+- 🔔 **Notifikasi** - Update real-time untuk status chat dan lain sebagainya
 
 ### Untuk Admin
 - 👥 **User Management** - Kelola user, artist, dan konten
 - 📊 **Dashboard Admin** - Monitoring aktivitas platform
 - 🚫 **Moderasi Konten** - Review dan moderasi karya yang diupload
-- 📈 **Reports & Analytics** - Laporan lengkap aktivitas platform
 
 ---
 
@@ -84,20 +83,21 @@ Project ini dikembangkan menggunakan metodologi Research & Development dengan pe
 
 - **Backend Framework:** Laravel 12.x
 - **Frontend:** Blade Templates, CSS, JavaScript
+- **laragon**
 - **Database:** MySQL
-- **Authentication:** Laravel
+- **Authentication:** di buat sendiri
 - **File Storage:** Laravel Storage
-- **Real-time Features:** Laravel Echo
-- **Animation css**
+- **Real-time Features:** dari js
+- **Animation css** dari css
 
 ---
 
 ## 📦 Instalasi
 
 ### Prasyarat
-- PHP >= 8.4
+- PHP >= terupdate
 - Composer
-- MySQL >= 8.4
+- MySQL >= terupdate
 - Node.js & NPM
 - Git
 
@@ -242,7 +242,7 @@ portfolio-artist-laravel/
 
 ## 🎯 Roadmap & Future Development
 
-- [ ] Implementasi sistem pembayaran still manual 
+- [ ] Implementasi sistem pembayaran still manual dengan 3 proses tahapan dp
 - [ ] Notifikasi real-time
 - [ ] Mobile responsive optimization
 - [ ] mobile app
@@ -288,3 +288,6 @@ Dikembangkan oleh **Hilal** sebagai bagian dari penelitian tugas akhir.
   <p>Dibuat dengan ❤️ untuk komunitas digital artist</p>
   <p>⭐ Star project ini jika bermanfaat!</p>
 </div>
+
+
+**this is project open source, if u need this app u can use it dont pay me is free, im happy for helping people**
