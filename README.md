@@ -290,4 +290,4 @@ Dikembangkan oleh **Hilal** sebagai bagian dari penelitian tugas akhir.
 </div>
 
 
-**this is project open source, if u need this app u can use it dont pay me is free, im happy for helping people**
+**this is project open source, if u need this app u can use it dont pay me it is free, im happy for helping people**
