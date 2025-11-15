@@ -19,6 +19,14 @@ Project ini dikembangkan menggunakan metodologi Research & Development dengan pe
 
 ---
 
+## catatan
+## Ini cara gak mau ribet atau mau jalanin web di local server sendiri (localhost:8000)(127.0.0.1) untuk costomisasi
+1. pertama install laragon
+2. 
+
+
+---
+
 ## 📸 Screenshot Aplikasi
 
 ### 1. Halaman Utama - Dashboard
