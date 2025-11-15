@@ -31,8 +31,8 @@ Project ini dikembangkan menggunakan metodologi Research & Development dengan pe
 6. cara cepat check foldernya tinggal ketik "ls" di terminal akan muncul nama foldernya.
 7. kemudian pastikan udah download composernya, kalo blum langsung ke web sitenya download dan install. ketik aja di google composer, klik download, cari Composer-setup.exe
 - (part 3 jalanin aplikasinya)
-8. kembali ke vscode. untuk ngejalanin websitenya, pertama harus migrate dulu databasenya, copy paste ini "php artisan migrate:fresh" ini akan secara otomatis terinstall di backend laragonnya di databese mysql. tambahan paste ini "php artisan storage:link" ini apa bang?? ini tu tempat penyimpanan data berupa gambar,video,gif smua tersimpan folder storage. klo misalkan muncul "link already exists." berati tinggal jalnkan saja upload data nya di web server untuk testing.
-9. trus admin seedernya di jalani ini untuk login sebagai admin atau artist yang mengeloala website ini copy paste "php artisan db:seed --class=AdminSeeder" ini akan muncul email dan password di terminal.
+8. kembali ke vscode. untuk ngejalanin websitenya, pertama harus migrate dulu databasenya, copy paste ini "php artisan migrate:fresh" ini akan secara otomatis terinstall di backend laragonnya di databese mysql.
+9. trus admin seedernya di jalani ini untuk login sebagai admin atau artist yang mengeloala website ini copy paste "php artisan db:seed --class=AdminSeeder" ini akan muncul email dan password di terminal.  tambahan paste ini "php artisan storage:link" ini apa bang?? ini tu tempat penyimpanan data berupa gambar,video,gif smua tersimpan folder storage. klo misalkan muncul "link already exists." berati tinggal jalnkan saja upload data nya di web server untuk testing.
 10. jalanin web nya dengan copy paste "composer run dev" sabar harus menuggu prosesnya, ketika udah selesai muncul web server localhost dengan port 8000, itu klik caranya arah kursornya di link tersebut kmudian Ctrl+klik kiri akan membuka web nya. web nya sudah jalan di server kita sendiri, ini bukan global server yang bisa di akses kita semua, hanya bisa di akses di komputer atau laptop kita sendiri.
 **selesai**
 
